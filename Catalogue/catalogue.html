@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALFA STEEL - Catalogue Produits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <div class="logo" onclick="window.location.href='../index.html'" style="cursor: pointer;"> 
+        <img class="logo-icon" src="src/img/shortcut.webp" alt="Alfa Steel Logo" style="width: 38px; height: 38px; border-radius: 50%; object-fit: cover;">
+        <a href="../index.html" class="logo-text" style="text-decoration: none; color: inherit; cursor: pointer;">SARL ALFA STEEL</a>
+      </div>
+      
+      <nav class="nav">
+        <button class="nav-btn" id="home-btn" onclick="window.location.href='index.html'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+            <polyline points="9,22 9,12 15,12 15,22"/>
+          </svg>
+          Accueil
+        </button>
+        
+        <button class="nav-btn theme-toggle" id="theme-toggle">
+          <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <path d="M12 1v2m0 18v2M4.22 4.22l1.42 1.42m12.72 12.72l1.42 1.42M1 12h2m18 0h2M4.22 19.78l1.42-1.42m12.72-12.72l1.42-1.42"/>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+          </svg>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Catalogue Produits</h1>
+        <p class="hero-subtitle">Découvrez notre gamme complète de produits sidérurgiques de qualité</p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+      <div class="filters-container">
+        <div class="filter-group">
+          <label class="filter-label">Catégorie</label>
+          <select class="filter-select" id="category-filter">
+            <option value="all">Toutes les catégories</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Recherche</label>
+          <div class="search-wrapper">
+            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="11" cy="11" r="8"/>
+              <path d="M21 21l-4.35-4.35"/>
+            </svg>
+            <input type="text" class="filter-input" id="search-input" placeholder="Rechercher un produit...">
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <label class="filter-label">Tri</label>
+          <select class="filter-select" id="sort-select">
+            <option value="az">A → Z</option>
+            <option value="za">Z → A</option>
+          </select>
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products">
+      <div class="products-container">
+        <div class="products-grid" id="products-grid"></div>
+        
+        <!-- No Results -->
+        <div class="no-results" id="no-results" style="display: none;">
+          <svg class="no-results-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/>
+            <path d="M21 21l-4.35-4.35"/>
+          </svg>
+          <h3>Aucun produit trouvé</h3>
+          <p>Essayez de modifier vos critères de recherche</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Product Modal -->
+  <div class="modal-overlay" id="modal-overlay">
+    <div class="modal">
+      <button class="modal-close" id="modal-close">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      
+      <div class="modal-content" id="modal-content">
+        <!-- Modal content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
